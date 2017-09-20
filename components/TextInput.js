@@ -9,7 +9,11 @@ class TextInput extends React.Component {
             inputText: 'initial text'
         };
     }
-
+    deleteLetter () {
+        const inputText = this.state.inputText.substring(0, this.state.inputText.length-1);
+   
+        this.setState ({inputText});
+    }
     handleChange (e) {
         const inputText = e.target.value;
         this.setState ({inputText});
@@ -22,7 +26,11 @@ class TextInput extends React.Component {
         value={this.state.inputText}
         onChange={this.handleChange.bind(this)}
         />
-        <TextDisplay text={this.state.inputText}/>
+        <TextDisplay 
+        text={this.state.inputText}
+        deleteLetter = {this.deleteLetter.bind(this)}
+
+        />
         </div>);
     }
 }
