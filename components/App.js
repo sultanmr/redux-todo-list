@@ -8,7 +8,7 @@ class App extends React.Component {
         render () {return (<div>
         <h1>Todo List</h1>
         <TodoInput dispatch={this.props.dispatch}/>
-        <TodoList  todos={this.props.todos}/>
+        <TodoList dispatch={this.props.dispatch}  todos={this.props.todos}/>
         </div>);
         }
 }
